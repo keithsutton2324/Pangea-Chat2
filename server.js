@@ -14,10 +14,9 @@ const {
 const app = express();
 const server = http.createServer(app);
 const io = socketio(server);
-/*
+
 // routes
 app.get("/index.html");
-*/
 
 const botName = 'Local Time';
 
