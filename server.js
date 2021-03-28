@@ -16,7 +16,7 @@ const server = http.createServer(app);
 const io = socketio(server);
 
 // routes
-app.get("/");
+app.get("/index.html");
 
 app.use(express.static(path.join(__dirname, 'public')));
 if (process.env.NODE_ENV === 'production') {
