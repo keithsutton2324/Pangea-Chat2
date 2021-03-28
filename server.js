@@ -14,11 +14,12 @@ const {
 const app = express();
 const server = http.createServer(app);
 const io = socketio(server);
-
+/*
 // routes
 app.get('/', (req, res) => {
 	res.send('Hello from MERN');
 });
+*/
 
 app.use(express.static(path.join(__dirname, 'public')));
 if (process.env.NODE_ENV === 'production') {
