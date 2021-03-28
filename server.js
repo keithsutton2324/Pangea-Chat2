@@ -15,9 +15,12 @@ const app = express();
 const server = http.createServer(app);
 const io = socketio(server);
 
-// routes
-app.get("/Public/index.html");
+//all routes start with /app will be redirected to app folder as public
+app.use("/app", express.static(path.join(__dirname, '../Public')));
 
+app.get("/", function (req,res) {
+    res.send("server : i am working")
+});
 const botName = 'Local Time';
 
 // Run when client connects
