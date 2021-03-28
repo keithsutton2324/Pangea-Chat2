@@ -15,8 +15,8 @@ const app = express();
 const server = http.createServer(app);
 const io = socketio(server);
 
-app.get('/', (request, response) => {
-	response.sendFile(path.join(__dirname, 'Public', 'index'));
+app.get('*', (request, response) => {
+	response.sendFile(path.join(__dirname, 'Public', 'index.html'));
 });
 /*
 app.get('*', (request, response) => {
