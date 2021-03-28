@@ -15,9 +15,9 @@ const app = express();
 const server = http.createServer(app);
 const io = socketio(server);
 
-//all routes start with /Public will be redirected to app folder as public
-app.use("/Public", express.static(path.join(__dirname, '../Public')));
-/*
+app.get('*', (request, response) => {
+	response.sendFile(path.join(__dirname, 'Public', 'index.html'));
+});/*
 app.get("/", function (req,res) {
     res.send("server : i am working")
 });
