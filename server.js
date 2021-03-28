@@ -14,17 +14,18 @@ const {
 const app = express();
 const server = http.createServer(app);
 const io = socketio(server);
-/*
-// routes
-app.get('/', (req, res) => {
-	res.send('Hello from MERN');
-});
-*/
 
+// routes
+app.get("/", function(req, res) {
+      res.json(path.join(__dirname, "Public/index.html"));
+});
+
+    /*
 app.use(express.static(path.join(__dirname, 'public')));
 if (process.env.NODE_ENV === 'production') {
   app.use(express.static('client/build'));
 }
+*/
 
 const botName = 'Local Time';
 
